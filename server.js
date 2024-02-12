@@ -8,7 +8,20 @@ const app = express()
 app.set('view engine','ejs')
 
 app.get('/', (req, res) => {
-    res.render('index')
+    const articles = [{
+      title: 'test article 1',
+      createAt:new Date(),
+      description: 'test description'
+
+    },
+
+    {
+        title: 'test article 2',
+      createAt: new Date(),
+      description: 'test description'
+
+    }]
+    res.render('articles/index', {articles:articles})
   });
 
 
